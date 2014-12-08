@@ -1,5 +1,22 @@
 #![feature(macro_rules)]
 
+/// Helper macro for handling multiple result types easily. The result
+/// is similar to using `try!`, but instead passing the `Err` through
+/// as is, it will be wrapped in a given enum. This allows to simplify
+/// handling multiple errors in one function.
+///
+/// # Example
+///
+/// ```
+/// enum ReadingError {
+///     Io(IoError),
+///     Parse(ParseError),
+/// }
+/// fn io_and_parsing() -> Result<(), ReadingError> {
+///     let bytes = try_or_wrap!(do_io(), ReadingError::Io);
+///     let data = try_or_wrap!(do_parsing(), ReadingError::Parse);
+/// }
+/// ```
 #[macro_export]
 macro_rules! try_or_wrap (
     ($expr:expr, $wrap_error:path) => ({
