@@ -1,0 +1,7 @@
+[package]
+
+name = "try_or_wrap"
+version = "0.0.1"
+authors = ["Stanisław Pitucha <viraptor@gmail.com>"]
+license = "MIT"
+keywords = ["macro", "error"]
