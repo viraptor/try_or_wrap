@@ -13,3 +13,4 @@ Like try!, but can aggregate more than one enum into a wrapper.
 [lib]
 name = "try_or_wrap"
 doctest = false
+plugin = true
