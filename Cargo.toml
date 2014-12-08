@@ -5,6 +5,10 @@ version = "0.0.1"
 authors = ["Stanisław Pitucha <viraptor@gmail.com>"]
 license = "MIT"
 keywords = ["macro", "error"]
+description = """
+Macro for simplified handling of multiple error conditions in a single function.
+Like try!, but can aggregate more than one enum into a wrapper.
+"""
 
 [lib]
 name = "try_or_wrap"
