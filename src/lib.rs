@@ -18,14 +18,14 @@
 /// }
 /// ```
 #[macro_export]
-macro_rules! try_or_wrap (
+macro_rules! try_or_wrap {
     ($expr:expr, $wrap_error:path) => ({
         match $expr {
             Ok(val) => val,
             Err(err) => return Err($wrap_error(err))
         }
     })
-)
+}
 
 #[cfg(test)]
 #[deriving(PartialEq,Show)]
