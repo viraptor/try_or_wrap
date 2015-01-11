@@ -1,5 +1,3 @@
-#![feature(macro_rules)]
-
 /// Helper macro for handling multiple result types easily. The result
 /// is similar to using `try!`, but instead passing the `Err` through
 /// as is, it will be wrapped in a given enum. This allows to simplify
@@ -28,19 +26,19 @@ macro_rules! try_or_wrap {
 }
 
 #[cfg(test)]
-#[deriving(PartialEq,Show)]
+#[derive(PartialEq,Show)]
 enum ErrorTypeA {
     Fail,
 }
 
 #[cfg(test)]
-#[deriving(PartialEq,Show)]
+#[derive(PartialEq,Show)]
 enum ErrorTypeB {
     Fail,
 }
 
 #[cfg(test)]
-#[deriving(PartialEq,Show)]
+#[derive(PartialEq,Show)]
 enum ErrorWrapper {
     WrapA(ErrorTypeA),
     WrapB(ErrorTypeB),
