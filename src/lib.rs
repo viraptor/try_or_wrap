@@ -26,19 +26,19 @@ macro_rules! try_or_wrap {
 }
 
 #[cfg(test)]
-#[derive(PartialEq,Show)]
+#[derive(PartialEq,Debug)]
 enum ErrorTypeA {
     Fail,
 }
 
 #[cfg(test)]
-#[derive(PartialEq,Show)]
+#[derive(PartialEq,Debug)]
 enum ErrorTypeB {
     Fail,
 }
 
 #[cfg(test)]
-#[derive(PartialEq,Show)]
+#[derive(PartialEq,Debug)]
 enum ErrorWrapper {
     WrapA(ErrorTypeA),
     WrapB(ErrorTypeB),
